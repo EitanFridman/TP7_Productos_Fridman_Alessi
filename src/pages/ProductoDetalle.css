@@ -1,0 +1,32 @@
+.producto-detalle {
+    max-width: 700px;
+    margin: 2rem auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+  }
+  
+  .producto-detalle h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .producto-detalle img {
+    max-height: 300px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+  }
+  
+  .producto-detalle p {
+    color: #636e72;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .producto-detalle strong {
+    font-size: 1.4rem;
+    color: var(--text-color);
+  }
+  

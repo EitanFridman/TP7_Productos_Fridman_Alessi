@@ -1,0 +1,15 @@
+.home {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.home h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.home p {
+  font-size: 1.25rem;
+  color: #636e72;
+}

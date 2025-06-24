@@ -1,0 +1,113 @@
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--secondary-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links li {
+  position: relative; /* necesario para que el dropdown se posicione desde acá */
+  list-style: none;
+}
+
+.nav-links a {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--border-radius);
+  transition: background 0.3s;
+  color: var(--text-color);
+}
+
+.nav-links a:hover {
+  background-color: var(--secondary-color);
+}
+
+/* .dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  background-color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  display: none;
+  flex-direction: column;
+  min-width: 220px;
+  overflow: hidden;
+  z-index: 200;
+}
+
+
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu li {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--secondary-color);
+  background-color: white;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu li:hover {
+  background-color: var(--secondary-color);
+} */
+
+
+
+
+.dropdown {
+  position: relative; /* ⬅️ Necesario */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0; /* ⬅️ Alineado al borde derecho del botón "Productos" */
+  margin-top: 0.5rem;
+  background-color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  overflow: hidden;
+  z-index: 200;
+  padding: 0.5rem 0;
+}
+
+
+.dropdown-menu li {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--secondary-color);
+  background-color: white;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu li:hover {
+  background-color: var(--secondary-color);
+}
