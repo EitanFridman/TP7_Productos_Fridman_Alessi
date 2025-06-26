@@ -20,23 +20,22 @@ function Navbar() {
           <NavLink to='/'>Home</NavLink>
           <NavLink to='/quienes-somos'>Quiénes Somos</NavLink>
 
-                        <div
-                className="dropdown"
-                onMouseEnter={() => setMostrarMenu(true)}
-                onMouseLeave={() => setMostrarMenu(false)}
-              >
-                <span>Productos ▼</span>
-                {mostrarMenu && (
-                  <div className="dropdown-menu">
-                    <NavLink to='/productos'>Ver todos</NavLink>
-                    {categorias.map(cat => (
-                      <li key={cat}>
-                        <Link to={`/productos/categoria/${cat}`}>{cat}</Link>
-                      </li>
-                    ))}
-                  </div>
-                )}
-              </div>
+            <div className="dropdown"
+              onMouseEnter={() => setMostrarMenu(true)}
+              onMouseLeave={() => setMostrarMenu(false)}>
+
+              <span>Productos ▼</span>
+              {mostrarMenu && (
+                <div className="dropdown-menu">
+                  <NavLink to='/productos'>Ver todos</NavLink>
+                  {categorias.map(cat => (
+                      <li key={cat.slug}>
+                      <Link to={`/productos/categoria/${cat.slug}`}>{cat.name}</Link>
+                    </li>
+                  ))}
+                </div>
+              )}
+            </div>
 
           <NavLink to='/contacto'>Contacto</NavLink>
         </nav>

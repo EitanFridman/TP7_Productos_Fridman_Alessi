@@ -37,4 +37,9 @@
   .ver-detalle:hover {
     background-color: #0876b6;
   }
+
+  img{
+    border-color: black;
+    border-width: 5px;
+  }
   
