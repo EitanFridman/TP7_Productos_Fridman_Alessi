@@ -15,12 +15,11 @@ export default function ProductoDetalle() {
   if (!producto) return <p>Cargando...</p>;
 
   return (
-    <div>
+    <div className='producto-detalle'>
       <h1>{producto.title}</h1>
-      <img src={producto.thumbnail || 'https://via.placeholder.com/150'} alt={producto.title} style={{ width: '300px' }} />
+      <img src={producto.thumbnail} alt={producto.title}/>
       <p>{producto.description}</p>
       <p>Precio: ${producto.price}</p>
-      <p>Categoría: {producto.category}</p>
     </div>
   );
 }

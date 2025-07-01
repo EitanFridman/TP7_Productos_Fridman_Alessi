@@ -1,17 +1,39 @@
 .productos {
-    padding: 2rem 1rem;
-  }
-  
-  .productos h2 {
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    color: var(--primary-color);
-    text-align: center;
-  }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
-  }
-  
+  padding: 2rem 1rem;
+}
+
+.productos h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--color3);
+  text-align: center;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 2rem;
+}
+
+.paginacion {
+display: flex;
+justify-content: center;
+margin-top: 2rem;
+gap: 0.5rem;
+}
+
+.paginacion button {
+border: none;
+background: var(--color2);
+color: var(--color-texto);
+padding: 0.5rem 0.75rem;
+border-radius: var(--border-radius);
+cursor: pointer;
+transition: background 0.2s ease, color 0.2s ease;
+}
+
+.paginacion button:hover,
+.paginacion button.activo {
+background: var(--color3);
+color: var(--color-bg);
+}

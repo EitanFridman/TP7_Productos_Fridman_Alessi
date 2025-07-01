@@ -6,10 +6,10 @@
 .home h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: var(--primary-color);
+  color: var(--color3);
 }
 
 .home p {
   font-size: 1.25rem;
-  color: #636e72;
+  color: var(--color-texto);
 }
