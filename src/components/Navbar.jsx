@@ -14,7 +14,7 @@ function Navbar() {
 
   return (
     <header className="navbar">
-      <Link to='/' className="logo">Mi Sitio</Link>
+      <Link to='/' className="logo">HumanOs</Link>
       <div className="navbar-container">
         <nav className="nav-links">
           <NavLink to='/'>Home</NavLink>
