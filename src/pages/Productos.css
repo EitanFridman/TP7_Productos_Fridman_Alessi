@@ -9,6 +9,14 @@
   text-align: center;
 }
 
+.titulo{
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--color3);
+  text-align: left;
+}
+
 .grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

@@ -32,7 +32,9 @@ export default function Productos() {
   return (
     <div className="productos">
       <h2>Productos</h2>
-      
+ 
+      <h3 className='titulo'>{idCategoria}</h3>
+
       <div className="grid">
         {productos.map(prod => (
           <CardProducto key={prod.id} producto={prod} />
