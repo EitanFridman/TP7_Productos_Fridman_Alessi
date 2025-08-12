@@ -42,7 +42,9 @@ export function CartProvider({ children }) {
       const index = prev.findIndex(p => p.id === producto.id);
       if (index !== -1) {
         const actualizado = [...prev];
-        actualizado[index].quantity += cantidad;
+        const item = { ...actualizado[index] };
+        item.quantity += cantidad;
+        actualizado[index] = item;
         return actualizado;
       }
       return [...prev, { ...producto, quantity: cantidad }];

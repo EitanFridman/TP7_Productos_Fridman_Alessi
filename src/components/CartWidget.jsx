@@ -23,7 +23,7 @@ export default function CartWidget() {
               {cartItems.map(item => (
                 <li key={item.id}>
                   <span>{item.title} x{item.quantity}</span>
-                  <span>${item.price * item.quantity}</span>
+                  <span>${(item.price * item.quantity).toFixed(2)}</span>
                   <button onClick={() => removeFromCart(item.id)}>x</button>
                 </li>
               ))}
