@@ -3,11 +3,13 @@ import { useParams } from 'react-router-dom';
 import './ProductoDetalle.css';
 import CardProducto from '../components/CardProducto';
 import axios from 'axios';
+import { useCart } from '../context/CartContext.jsx';
 
 export default function ProductoDetalle() {
   const [producto, setProducto] = useState(null);
   const [relacionados, setRelacionados] = useState([]);
   const { idProducto } = useParams();
+  const { addToCart } = useCart();
 
   useEffect(() => {
     axios.get(`https://dummyjson.com/products/${idProducto}`)
@@ -51,9 +53,8 @@ export default function ProductoDetalle() {
             <h1>{producto.title}</h1>
             <p className="descripcion">{producto.description}</p>
             <p className="precio">${producto.price}</p>
-            <p className="stock">Stock: {producto.stock}</p>
             <p className="rating">⭐ {producto.rating} / 5</p>
-            <button className="btn-comprar">Añadir al carrito</button>
+            <button className="btn-comprar" onClick={() => addToCart(producto)}>Añadir al carrito</button>
           </div>
         </div>
       </div>

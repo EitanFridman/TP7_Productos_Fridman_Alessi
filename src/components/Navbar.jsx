@@ -2,6 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './Navbar.css';
 import axios from 'axios';
+import CartWidget from './CartWidget.jsx';
 
 function Navbar() {
   const [categorias, setCategorias] = useState([]);
@@ -44,6 +45,7 @@ function Navbar() {
 
           <NavLink to='/contacto'>Contacto</NavLink>
         </nav>
+        <CartWidget />
       </div>
     </header>
   );

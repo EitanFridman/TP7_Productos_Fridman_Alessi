@@ -5,6 +5,7 @@ import QuienesSomos from './pages/QuienesSomos';
 import Productos from './pages/Productos';
 import ProductoDetalle from './pages/ProductoDetalle';
 import Contacto from './pages/Contacto';
+import Checkout from './pages/Checkout.jsx';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='productos/categoria/:idCategoria' element={<Productos />} />
         <Route path='productos/:idProducto' element={<ProductoDetalle />} />
         <Route path='contacto' element={<Contacto />} />
+        <Route path='checkout' element={<Checkout />} />
       </Route>
     </Routes>
   );

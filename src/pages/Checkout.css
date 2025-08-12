@@ -1,0 +1,33 @@
+.checkout {
+    padding: 2rem;
+  }
+  
+  .checkout ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .checkout li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  
+  .checkout .total {
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
+  .checkout .finalizar {
+    margin-top: 1rem;
+    background-color: var(--color1);
+    color: var(--color-bg);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+  }
+  
+  .checkout .finalizar:hover {
+    opacity: 0.9;
+  }

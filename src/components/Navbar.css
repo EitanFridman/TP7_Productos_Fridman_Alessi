@@ -10,6 +10,15 @@ top: 0;
 z-index: 100;
 }
 
+/* ------------------------------------ */
+.navbar-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+/* ------------------------------------ */
+
 .logo {
 font-size: 1.5rem;
 font-weight: bold;

@@ -43,3 +43,22 @@ img{
   border-color: black;
   border-width: 5px;
 }
+
+/* ------------------------------------ */
+
+.btn-add {
+  display: block;
+  margin: 0.5rem auto 0;
+  background-color: var(--color2);
+  color: var(--color-bg);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-add:hover {
+  background-color: var(--color3);
+  color: var(--color-bg);
+}
