@@ -62,14 +62,22 @@ export function CartProvider({ children }) {
     showToast('Carrito vaciado');
   };
 
-  const getTotal = () => cartItems
-    .reduce((total, item) => total + item.price * item.quantity, 0);
+  const buyCart = () => {
+    setCartItems([]);
+    showToast('Gracias por comprar');
+  };
 
+  const getTotal = () => {
+    const total = cartItems
+      .reduce((sum, item) => sum + item.price * item.quantity, 0);
+  
+    return Math.round(total * 100) / 100;
+  };
   const getCount = () => cartItems
     .reduce((count, item) => count + item.quantity, 0);
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart, getTotal, getCount }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart, buyCart, getTotal, getCount }}>
       {children}
       {toast && <div className="toast">{toast}</div>}
     </CartContext.Provider>

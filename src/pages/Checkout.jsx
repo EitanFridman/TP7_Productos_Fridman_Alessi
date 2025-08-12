@@ -2,7 +2,7 @@ import { useCart } from '../context/CartContext.jsx';
 import './Checkout.css';
 
 export default function Checkout() {
-  const { cartItems, getTotal, clearCart } = useCart();
+  const { cartItems, getTotal, buyCart } = useCart();
 
   if (cartItems.length === 0) {
     return (
@@ -19,12 +19,12 @@ export default function Checkout() {
         {cartItems.map(item => (
           <li key={item.id}>
             <span>{item.title} x{item.quantity}</span>
-            <span>${item.price * item.quantity}</span>
+            <span>{(item.price * item.quantity).toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 2})}</span>
           </li>
         ))}
       </ul>
       <p className="total">Total: ${getTotal()}</p>
-      <button className="finalizar" onClick={clearCart}>Finalizar compra</button>
+      <button className="finalizar" onClick={buyCart}>Finalizar compra</button>
     </div>
   );
 }
