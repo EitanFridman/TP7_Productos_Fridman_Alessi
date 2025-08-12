@@ -15,11 +15,11 @@ export default function Checkout() {
   return (
     <div className="checkout">
       <h1>Resumen de compra</h1>
-      <ul>
+      <ul className="items">
         {cartItems.map(item => (
           <li key={item.id}>
-            <span>{item.title}</span>
-            <span>${item.price}</span>
+            <span>{item.title} x{item.quantity}</span>
+            <span>${item.price * item.quantity}</span>
           </li>
         ))}
       </ul>

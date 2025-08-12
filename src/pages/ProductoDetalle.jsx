@@ -10,6 +10,7 @@ export default function ProductoDetalle() {
   const [relacionados, setRelacionados] = useState([]);
   const { idProducto } = useParams();
   const { addToCart } = useCart();
+  const [cantidad, setCantidad] = useState(1);
 
   useEffect(() => {
     axios.get(`https://dummyjson.com/products/${idProducto}`)
@@ -53,8 +54,20 @@ export default function ProductoDetalle() {
             <h1>{producto.title}</h1>
             <p className="descripcion">{producto.description}</p>
             <p className="precio">${producto.price}</p>
+            <p className="stock">Stock: {producto.stock}</p>
             <p className="rating">⭐ {producto.rating} / 5</p>
-            <button className="btn-comprar" onClick={() => addToCart(producto)}>Añadir al carrito</button>
+            <div className="cantidad">
+              <label htmlFor="cantidad">Cantidad:</label>
+              <input
+                id="cantidad"
+                type="number"
+                min="1"
+                max={producto.stock}
+                value={cantidad}
+                onChange={e => setCantidad(Math.max(1, parseInt(e.target.value) || 1))}
+              />
+            </div>
+            <button className="btn-comprar" onClick={() => addToCart(producto, cantidad)}>Añadir al carrito</button>
           </div>
         </div>
       </div>

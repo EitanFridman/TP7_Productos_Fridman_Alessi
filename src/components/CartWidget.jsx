@@ -4,7 +4,7 @@ import { useCart } from '../context/CartContext.jsx';
 import './CartWidget.css';
 
 export default function CartWidget() {
-  const { cartItems, removeFromCart, clearCart, getTotal } = useCart();
+  const { cartItems, removeFromCart, clearCart, getTotal, getCount } = useCart();
   const [open, setOpen] = useState(false);
 
   const toggle = () => setOpen(prev => !prev);
@@ -12,7 +12,7 @@ export default function CartWidget() {
   return (
     <div className="cart-widget">
       <button className="cart-button" onClick={toggle}>
-        🛒 {cartItems.length}
+        🛒 {getCount()}
       </button>
       <div className={`cart-dropdown ${open ? 'open' : ''}`}>
         {cartItems.length === 0 ? (
@@ -22,8 +22,8 @@ export default function CartWidget() {
             <ul>
               {cartItems.map(item => (
                 <li key={item.id}>
-                  <span>{item.title}</span>
-                  <span>${item.price}</span>
+                  <span>{item.title} x{item.quantity}</span>
+                  <span>${item.price * item.quantity}</span>
                   <button onClick={() => removeFromCart(item.id)}>x</button>
                 </li>
               ))}
