@@ -11,9 +11,7 @@ export default function CartWidget() {
 
   return (
     <div className="cart-widget">
-      <button className="cart-button" onClick={toggle}>
-        🛒 {getCount()}
-      </button>
+      <button className="cart-button" onClick={toggle}>🛒 {getCount()}</button>
       <div className={`cart-dropdown ${open ? 'open' : ''}`}>
         {cartItems.length === 0 ? (
           <p>Carrito vacío</p>

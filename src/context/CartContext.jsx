@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useEffect, useState } from 'react';
 import '../components/Toast.css';
 
@@ -10,7 +9,7 @@ export function CartProvider({ children }) {
       const saved = localStorage.getItem('cartItems');
       if (!saved) return [];
       const parsed = JSON.parse(saved);
-      // Agrupar productos repetidos y asegurar cantidad
+      // Agrupar productos repetidos
       const agrupados = [];
       for (const item of parsed) {
         const existente = agrupados.find(p => p.id === item.id);

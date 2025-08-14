@@ -17,9 +17,18 @@ export default function Checkout() {
       <h1>Resumen de compra</h1>
       <ul className="items">
         {cartItems.map(item => (
-          <li key={item.id}>
-            <span>{item.title} x{item.quantity}</span>
-            <span>{(item.price * item.quantity).toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 2})}</span>
+          <li key={item.id} className="checkout-item">
+            <div className="item-info">
+              <img src={item.thumbnail} alt={item.title} />
+              <div className="details">
+                <span className="name">{item.title}</span>
+                <span className="unit-price">${item.price} c/u</span>
+              </div>
+            </div>
+            <div className="item-summary">
+              <span className="quantity">x{item.quantity}</span>
+              <span className="price">{(item.price * item.quantity).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 })}</span>
+            </div>
           </li>
         ))}
       </ul>
